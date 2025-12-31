@@ -883,7 +883,7 @@
     <div class="music-player">
         <div class="music-controls">
             <button class="music-btn" id="playPauseBtn">
-                <i class="fas fa-pause" id="playPauseIcon"></i>
+                <i class="fas fa-play" id="playPauseIcon"></i>
             </button>
             <button class="music-btn" id="muteBtn">
                 <i class="fas fa-volume-up" id="muteIcon"></i>
@@ -895,7 +895,7 @@
     </div>
 
     <!-- Background Audio - NEW -->
-    <audio id="backgroundMusic" loop>
+    <audio id="backgroundMusic" loop preload="auto">
         <!-- You can replace this with your own music file -->
         <source src="Signs Of Love - Shihoko Hirata.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -938,8 +938,9 @@
         let gameOver = false;
         
         // Music player variables - NEW
-        let isPlaying = true;
+        let isPlaying = false;
         let isMuted = false;
+        let audioInitialized = false;
         
         // Function to initialize the carousel with images
         function initCarousel() {
@@ -1178,7 +1179,7 @@
             }
         }
         
-        // Music Player Functions - NEW
+        // Music Player Functions - FIXED
         function initMusicPlayer() {
             const audio = document.getElementById('backgroundMusic');
             const playPauseBtn = document.getElementById('playPauseBtn');
@@ -1186,24 +1187,29 @@
             const muteBtn = document.getElementById('muteBtn');
             const muteIcon = document.getElementById('muteIcon');
             
-            // Try to play audio automatically
-            audio.play().then(() => {
-                console.log("Music started playing automatically");
-            }).catch(error => {
-                console.log("Autoplay was prevented. User interaction required.");
-                // Change button to play icon
-                playPauseIcon.className = 'fas fa-play';
-                isPlaying = false;
-            });
+            // Set initial state (paused)
+            playPauseIcon.className = 'fas fa-play';
+            isPlaying = false;
             
             // Play/Pause button
             playPauseBtn.addEventListener('click', function() {
+                if (!audioInitialized) {
+                    audio.load(); // Load the audio file
+                    audioInitialized = true;
+                }
+                
                 if (isPlaying) {
                     audio.pause();
                     playPauseIcon.className = 'fas fa-play';
                 } else {
-                    audio.play();
-                    playPauseIcon.className = 'fas fa-pause';
+                    audio.play().then(() => {
+                        playPauseIcon.className = 'fas fa-pause';
+                    }).catch(error => {
+                        console.log("Playback failed:", error);
+                        // If autoplay is blocked, show play button
+                        playPauseIcon.className = 'fas fa-play';
+                        isPlaying = false;
+                    });
                 }
                 isPlaying = !isPlaying;
             });
@@ -1223,9 +1229,14 @@
             // Update play/pause icon when audio ends (for loop)
             audio.addEventListener('ended', function() {
                 // Audio will automatically restart due to loop attribute
-                // But we keep the icon consistent
                 playPauseIcon.className = 'fas fa-pause';
                 isPlaying = true;
+            });
+            
+            // Handle audio loading errors
+            audio.addEventListener('error', function(e) {
+                console.error("Error loading audio:", e);
+                alert("Could not load the audio file. Please check if 'Signs Of Love - Shihoko Hirata.mp3' is in the same folder as this HTML file.");
             });
         }
         
@@ -1243,7 +1254,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             initCarousel();
             initWordle();
-            initMusicPlayer(); // NEW: Initialize music player
+            initMusicPlayer(); // Initialize music player
             showSection('home');
             
             // Close modal when clicking outside
