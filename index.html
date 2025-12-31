@@ -14,21 +14,22 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
+        /* CHANGED: Background to light cream color */
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #f0f0f0;
+            background: #fef9f0; /* Light cream color */
+            color: #333333; /* Dark text for contrast on light background */
             min-height: 100vh;
             padding-bottom: 50px;
         }
         
-        /* Navigation Bar */
+        /* Navigation Bar - Updated for light background */
         nav {
-            background-color: rgba(10, 10, 30, 0.9);
+            background-color: rgba(255, 255, 255, 0.95); /* White with transparency */
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Lighter shadow */
         }
         
         .nav-container {
@@ -40,8 +41,9 @@
             gap: 20px;
         }
         
+        /* Updated button colors for light background */
         .nav-btn {
-            background: linear-gradient(to right, #ff6b6b, #ee5a52);
+            background: linear-gradient(to right, #5dbea3, #4ba288); /* Ghibli green */
             color: white;
             border: none;
             padding: 12px 30px;
@@ -50,13 +52,13 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2);
+            box-shadow: 0 4px 8px rgba(93, 190, 163, 0.2);
         }
         
         .nav-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
-            background: linear-gradient(to right, #ff8a8a, #ff6b6b);
+            box-shadow: 0 6px 12px rgba(93, 190, 163, 0.3);
+            background: linear-gradient(to right, #6dd1b5, #5dbea3);
         }
         
         /* Main Header */
@@ -67,25 +69,25 @@
             text-align: center;
         }
         
+        /* CHANGED: Bigger font size and Ghibli green color */
         h1 {
-    font-family: 'Lobster', cursive; /* Add this line */
-    font-size: 3.5rem;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #a1c4fd);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 10px;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+            font-family: 'Lobster', cursive;
+            font-size: 5rem; /* Increased from 3.5rem */
+            color: #5dbea3; /* Ghibli green color - removed gradient for solid color */
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1px;
+        }
         
+        /* CHANGED: Smaller font size and updated color */
         .subtitle {
-            font-size: 1.5rem;
-            color: #ffccd5;
-            margin-bottom: 30px;
+            font-size: 1.2rem; /* Reduced from 1.5rem */
+            color: #666666; /* Darker gray for better readability on light background */
+            margin-bottom: 20px; /* Reduced from 30px */
             font-style: italic;
         }
         
-        /* Carousel Section */
+        /* Carousel Section - Updated for light background */
         .carousel-container {
             max-width: 1200px;
             margin: 30px auto;
@@ -96,16 +98,17 @@
             font-size: 2rem;
             text-align: center;
             margin-bottom: 20px;
-            color: #ffccd5;
+            color: #5dbea3; /* Ghibli green */
         }
         
         .carousel {
             position: relative;
             overflow: hidden;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            background-color: rgba(30, 30, 60, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+            background-color: rgba(255, 255, 255, 0.8); /* Light background */
             padding: 15px;
+            border: 1px solid #eee;
         }
         
         .carousel-track {
@@ -115,7 +118,7 @@
             overflow-x: auto;
             scroll-behavior: smooth;
             scrollbar-width: thin;
-            scrollbar-color: #ff6b6b #2d3047;
+            scrollbar-color: #5dbea3 #f0f0f0; /* Updated to Ghibli green */
         }
         
         .carousel-track::-webkit-scrollbar {
@@ -123,12 +126,12 @@
         }
         
         .carousel-track::-webkit-scrollbar-track {
-            background: #2d3047;
+            background: #f0f0f0;
             border-radius: 10px;
         }
         
         .carousel-track::-webkit-scrollbar-thumb {
-            background: linear-gradient(to right, #ff6b6b, #ee5a52);
+            background: linear-gradient(to right, #5dbea3, #4ba288); /* Ghibli green */
             border-radius: 10px;
         }
         
@@ -140,12 +143,12 @@
             overflow: hidden;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
         }
         
         .carousel-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 15px 30px rgba(93, 190, 163, 0.2); /* Ghibli green tint */
         }
         
         .carousel-img {
@@ -167,7 +170,7 @@
         }
         
         .carousel-btn {
-            background-color: #ff6b6b;
+            background-color: #5dbea3; /* Ghibli green */
             color: white;
             border: none;
             width: 50px;
@@ -182,11 +185,11 @@
         }
         
         .carousel-btn:hover {
-            background-color: #ff8a8a;
+            background-color: #6dd1b5; /* Lighter Ghibli green */
             transform: scale(1.1);
         }
         
-        /* Modal Popup */
+        /* Modal Popup - Updated for light background */
         .modal {
             display: none;
             position: fixed;
@@ -202,12 +205,12 @@
         }
         
         .modal-content {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: #fef9f0; /* Light cream background */
             max-width: 800px;
             width: 90%;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             animation: modalAppear 0.4s ease-out;
         }
         
@@ -228,7 +231,7 @@
             font-size: 18px;
             line-height: 1.6;
             text-align: center;
-            color: #ffccd5;
+            color: #333333; /* Dark text */
         }
         
         .close-btn {
@@ -243,10 +246,10 @@
         }
         
         .close-btn:hover {
-            color: #ff6b6b;
+            color: #5dbea3; /* Ghibli green */
         }
         
-        /* Products Section */
+        /* Products Section - Updated for light background */
         .products-container {
             max-width: 1200px;
             margin: 50px auto;
@@ -257,7 +260,7 @@
             font-size: 2rem;
             text-align: center;
             margin-bottom: 30px;
-            color: #ffccd5;
+            color: #5dbea3; /* Ghibli green */
         }
         
         .products-grid {
@@ -268,65 +271,68 @@
         }
         
         .product-card {
-            background-color: rgba(30, 30, 60, 0.7);
+            background-color: rgba(255, 255, 255, 0.9); /* Light background */
             border-radius: 10px;
             padding: 25px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+            border: 1px solid #eee;
         }
         
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.2);
+            box-shadow: 0 15px 30px rgba(93, 190, 163, 0.15); /* Ghibli green tint */
         }
         
         .product-name {
             font-size: 1.5rem;
-            color: #ffccd5;
+            color: #333333; /* Dark text */
             margin-bottom: 10px;
         }
         
         .product-price {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #ff9a9e;
+            color: #5dbea3; /* Ghibli green */
         }
         
-        /* About Section */
+        /* About Section - Updated for light background */
         .about-container {
             max-width: 800px;
             margin: 50px auto;
             padding: 30px;
-            background-color: rgba(30, 30, 60, 0.7);
+            background-color: rgba(255, 255, 255, 0.9); /* Light background */
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+            border: 1px solid #eee;
         }
         
         .about-text {
             font-size: 1.2rem;
             line-height: 1.8;
             text-align: center;
-            color: #e0e0ff;
+            color: #333333; /* Dark text */
         }
         
-        /* Footer */
+        /* Footer - Updated for light background */
         footer {
             text-align: center;
             margin-top: 50px;
             padding: 20px;
-            color: #a1c4fd;
+            color: #666666; /* Darker gray */
             font-size: 0.9rem;
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
+            /* CHANGED: Adjusted for larger h1 on mobile */
             h1 {
-                font-size: 2.5rem;
+                font-size: 3.5rem; /* Still larger than original 2.5rem */
             }
             
             .subtitle {
-                font-size: 1.2rem;
+                font-size: 1rem; /* Adjusted for mobile */
             }
             
             .nav-container {
@@ -345,6 +351,17 @@
             
             .products-grid {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+        
+        /* CHANGED: Added media query for very small screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -433,7 +450,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>Made with <i class="fas fa-heart" style="color:#ff6b6b;"></i> for Bubu | Happy New Year!</p>
+        <p>Made with <i class="fas fa-heart" style="color:#5dbea3;"></i> for Bubu | Happy New Year!</p>
     </footer>
 
     <script>
