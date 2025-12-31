@@ -68,7 +68,7 @@
             padding: 20px;
             text-align: center;
             position: relative;
-            min-height: 400px;
+            min-height: 250px; /* FIXED: Reduced from 400px to eliminate gap */
         }
         
         /* CHANGED: Bigger font size and Ghibli green color */
@@ -107,35 +107,36 @@
         /* NEW: Floating Image Styles */
         .floating-img {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 120px; /* FIXED: Increased from 80px */
+            height: 120px; /* FIXED: Increased from 80px */
             opacity: 0;
             animation: slideIn 1s forwards, float 3s ease-in-out infinite;
             filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+            object-fit: contain; /* FIXED: Added to ensure images display properly */
         }
         
         /* NEW: Individual image positions and animation delays */
         .floating-img:nth-child(1) {
             top: 20px;
-            left: 20px;
+            left: 5%; /* FIXED: Changed from 20px to percentage for responsiveness */
             animation-delay: 0.2s, 0.2s;
         }
         
         .floating-img:nth-child(2) {
             top: 20px;
-            right: 20px;
+            right: 5%; /* FIXED: Changed from 20px to percentage for responsiveness */
             animation-delay: 0.4s, 0.4s;
         }
         
         .floating-img:nth-child(3) {
             bottom: 20px;
-            left: 20px;
+            left: 5%; /* FIXED: Changed from 20px to percentage for responsiveness */
             animation-delay: 0.6s, 0.6s;
         }
         
         .floating-img:nth-child(4) {
             bottom: 20px;
-            right: 20px;
+            right: 5%; /* FIXED: Changed from 20px to percentage for responsiveness */
             animation-delay: 0.8s, 0.8s;
         }
         
@@ -169,6 +170,8 @@
             animation-play-state: paused;
             transform: scale(1.1) !important;
             filter: drop-shadow(0 8px 15px rgba(93, 190, 163, 0.3));
+            pointer-events: auto; /* FIXED: Added to enable hover */
+            cursor: pointer; /* FIXED: Added for better UX */
         }
         
         /* Music Player Styling - NEW */
@@ -686,28 +689,33 @@
             
             /* NEW: Adjust floating images for mobile */
             .floating-img {
-                width: 60px;
-                height: 60px;
+                width: 90px; /* FIXED: Adjusted from 60px */
+                height: 90px; /* FIXED: Adjusted from 60px */
             }
             
             .floating-img:nth-child(1) {
                 top: 10px;
-                left: 10px;
+                left: 5px; /* FIXED: Adjusted for mobile */
             }
             
             .floating-img:nth-child(2) {
                 top: 10px;
-                right: 10px;
+                right: 5px; /* FIXED: Adjusted for mobile */
             }
             
             .floating-img:nth-child(3) {
                 bottom: 10px;
-                left: 10px;
+                left: 5px; /* FIXED: Adjusted for mobile */
             }
             
             .floating-img:nth-child(4) {
                 bottom: 10px;
-                right: 10px;
+                right: 5px; /* FIXED: Adjusted for mobile */
+            }
+            
+            /* FIXED: Reduce min-height for mobile */
+            .header-container {
+                min-height: 200px; /* FIXED: Adjusted for mobile */
             }
             
             .carousel-item {
@@ -763,12 +771,12 @@
             
             /* NEW: Further adjust floating images for very small screens */
             .floating-img {
-                width: 50px;
-                height: 50px;
+                width: 70px; /* FIXED: Adjusted from 50px */
+                height: 70px; /* FIXED: Adjusted from 50px */
             }
             
             .header-container {
-                min-height: 300px;
+                min-height: 180px; /* FIXED: Adjusted for very small screens */
             }
         }
     </style>
