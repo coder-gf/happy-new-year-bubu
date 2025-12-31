@@ -67,6 +67,8 @@
             margin: 30px auto;
             padding: 20px;
             text-align: center;
+            position: relative;
+            min-height: 400px;
         }
         
         /* CHANGED: Bigger font size and Ghibli green color */
@@ -77,6 +79,8 @@
             margin-bottom: 10px;
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
         }
         
         /* CHANGED: Smaller font size and updated color */
@@ -85,6 +89,86 @@
             color: #666666; /* Darker gray for better readability on light background */
             margin-bottom: 20px; /* Reduced from 30px */
             font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* NEW: Floating Images Container */
+        .floating-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* NEW: Floating Image Styles */
+        .floating-img {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            opacity: 0;
+            animation: slideIn 1s forwards, float 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+        }
+        
+        /* NEW: Individual image positions and animation delays */
+        .floating-img:nth-child(1) {
+            top: 20px;
+            left: 20px;
+            animation-delay: 0.2s, 0.2s;
+        }
+        
+        .floating-img:nth-child(2) {
+            top: 20px;
+            right: 20px;
+            animation-delay: 0.4s, 0.4s;
+        }
+        
+        .floating-img:nth-child(3) {
+            bottom: 20px;
+            left: 20px;
+            animation-delay: 0.6s, 0.6s;
+        }
+        
+        .floating-img:nth-child(4) {
+            bottom: 20px;
+            right: 20px;
+            animation-delay: 0.8s, 0.8s;
+        }
+        
+        /* NEW: Slide In Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(100px) scale(0.5);
+            }
+            to {
+                opacity: 0.9;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* NEW: Floating Animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+            66% {
+                transform: translateY(10px) rotate(-1deg);
+            }
+        }
+        
+        /* NEW: Bounce effect on hover (if pointer events are enabled) */
+        .floating-img:hover {
+            animation-play-state: paused;
+            transform: scale(1.1) !important;
+            filter: drop-shadow(0 8px 15px rgba(93, 190, 163, 0.3));
         }
         
         /* Music Player Styling - NEW */
@@ -600,6 +684,32 @@
                 font-size: 14px;
             }
             
+            /* NEW: Adjust floating images for mobile */
+            .floating-img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .floating-img:nth-child(1) {
+                top: 10px;
+                left: 10px;
+            }
+            
+            .floating-img:nth-child(2) {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .floating-img:nth-child(3) {
+                bottom: 10px;
+                left: 10px;
+            }
+            
+            .floating-img:nth-child(4) {
+                bottom: 10px;
+                right: 10px;
+            }
+            
             .carousel-item {
                 width: 200px;
                 height: 250px;
@@ -650,6 +760,16 @@
                 padding: 8px 12px;
                 font-size: 12px;
             }
+            
+            /* NEW: Further adjust floating images for very small screens */
+            .floating-img {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .header-container {
+                min-height: 300px;
+            }
         }
     </style>
 </head>
@@ -672,6 +792,14 @@
             <h1>Happy New Year Bubu!</h1>
             <p class="subtitle">For my scrumptious, delicious, cutest nonu &lt;3</p>
             <p class="subtitle">I love you cutie poo</p>
+            
+            <!-- NEW: Floating Images Container -->
+            <div class="floating-images">
+                <img src="img1.png" alt="Donut" class="floating-img">
+                <img src="img2.png" alt="Candy" class="floating-img">
+                <img src="img3.png" alt="Donut" class="floating-img">
+                <img src="img4.png" alt="Candy" class="floating-img">
+            </div>
         </section>
 
         <!-- Gallery Section -->
@@ -984,6 +1112,17 @@
             if (sectionId === 'home') {
                 document.getElementById('home').style.display = 'block';
                 document.getElementById('gallery').style.display = 'block';
+                
+                // NEW: Trigger floating images animation when home section is shown
+                setTimeout(() => {
+                    const floatingImgs = document.querySelectorAll('.floating-img');
+                    floatingImgs.forEach(img => {
+                        img.style.animation = 'none';
+                        setTimeout(() => {
+                            img.style.animation = '';
+                        }, 10);
+                    });
+                }, 100);
             }
         }
         
