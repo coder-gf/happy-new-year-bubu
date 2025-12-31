@@ -38,7 +38,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
         }
         
         /* Updated button colors for light background */
@@ -46,7 +46,7 @@
             background: linear-gradient(to right, #5dbea3, #4ba288); /* Ghibli green */
             color: white;
             border: none;
-            padding: 12px 30px;
+            padding: 12px 25px;
             border-radius: 30px;
             font-size: 16px;
             font-weight: 600;
@@ -85,6 +85,24 @@
             color: #666666; /* Darker gray for better readability on light background */
             margin-bottom: 20px; /* Reduced from 30px */
             font-style: italic;
+        }
+        
+        /* Section Styling */
+        .section-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #5dbea3;
         }
         
         /* Carousel Section - Updated for light background */
@@ -189,6 +207,251 @@
             transform: scale(1.1);
         }
         
+        /* Resolutions Section */
+        .resolutions-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .resolution-item {
+            background: white;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #5dbea3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .resolution-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .resolution-checkbox {
+            width: 24px;
+            height: 24px;
+            margin-right: 20px;
+            accent-color: #5dbea3;
+        }
+        
+        .resolution-text {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
+        /* GF Subscription Form */
+        .subscription-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-question {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .form-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .form-option {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .form-option:hover {
+            background: #e9f5f0;
+            transform: translateX(5px);
+        }
+        
+        .form-option input {
+            margin-right: 15px;
+            accent-color: #5dbea3;
+        }
+        
+        .submit-btn {
+            display: block;
+            margin: 30px auto;
+            background: linear-gradient(to right, #5dbea3, #4ba288);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(93, 190, 163, 0.3);
+        }
+        
+        .certificate-container {
+            text-align: center;
+            margin-top: 30px;
+            display: none;
+        }
+        
+        .certificate-image {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border: 5px solid white;
+        }
+        
+        /* Wordle Game */
+        .wordle-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .wordle-instructions {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .wordle-grid {
+            display: grid;
+            grid-template-rows: repeat(6, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .wordle-row {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+        
+        .wordle-cell {
+            aspect-ratio: 1;
+            border: 3px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .wordle-cell.filled {
+            border-color: #5dbea3;
+        }
+        
+        .wordle-cell.correct {
+            background-color: #5dbea3;
+            color: white;
+            border-color: #5dbea3;
+        }
+        
+        .wordle-cell.present {
+            background-color: #ffd166;
+            color: white;
+            border-color: #ffd166;
+        }
+        
+        .wordle-cell.absent {
+            background-color: #888;
+            color: white;
+            border-color: #888;
+        }
+        
+        .keyboard {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        
+        .keyboard-row {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        .key {
+            padding: 15px 10px;
+            background: #eee;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            min-width: 40px;
+            transition: all 0.2s ease;
+        }
+        
+        .key:hover {
+            background: #ddd;
+        }
+        
+        .key.enter, .key.backspace {
+            min-width: 80px;
+        }
+        
+        /* Hall of Fame Gallery */
+        .certificate-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            max-height: 600px;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .certificate-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .certificate-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .certificate-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid #5dbea3;
+        }
+        
+        .certificate-name {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+        }
+        
         /* Modal Popup - Updated for light background */
         .modal {
             display: none;
@@ -249,72 +512,6 @@
             color: #5dbea3; /* Ghibli green */
         }
         
-        /* Products Section - Updated for light background */
-        .products-container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 30px;
-            color: #5dbea3; /* Ghibli green */
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .product-card {
-            background-color: rgba(255, 255, 255, 0.9); /* Light background */
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
-            border: 1px solid #eee;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(93, 190, 163, 0.15); /* Ghibli green tint */
-        }
-        
-        .product-name {
-            font-size: 1.5rem;
-            color: #333333; /* Dark text */
-            margin-bottom: 10px;
-        }
-        
-        .product-price {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #5dbea3; /* Ghibli green */
-        }
-        
-        /* About Section - Updated for light background */
-        .about-container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.9); /* Light background */
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Lighter shadow */
-            border: 1px solid #eee;
-        }
-        
-        .about-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            text-align: center;
-            color: #333333; /* Dark text */
-        }
-        
         /* Footer - Updated for light background */
         footer {
             text-align: center;
@@ -326,21 +523,20 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            /* CHANGED: Adjusted for larger h1 on mobile */
             h1 {
-                font-size: 3.5rem; /* Still larger than original 2.5rem */
+                font-size: 3.5rem;
             }
             
             .subtitle {
-                font-size: 1rem; /* Adjusted for mobile */
+                font-size: 1rem;
             }
             
             .nav-container {
-                gap: 10px;
+                gap: 8px;
             }
             
             .nav-btn {
-                padding: 10px 20px;
+                padding: 10px 15px;
                 font-size: 14px;
             }
             
@@ -349,12 +545,21 @@
                 height: 250px;
             }
             
-            .products-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            .certificate-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .wordle-cell {
+                font-size: 1.5rem;
+            }
+            
+            .key {
+                padding: 12px 8px;
+                min-width: 30px;
+                font-size: 0.9rem;
             }
         }
         
-        /* CHANGED: Added media query for very small screens */
         @media (max-width: 480px) {
             h1 {
                 font-size: 2.8rem;
@@ -363,17 +568,27 @@
             .subtitle {
                 font-size: 0.9rem;
             }
+            
+            .nav-container {
+                gap: 5px;
+            }
+            
+            .nav-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar - Top of the homepage -->
+    <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
             <button class="nav-btn" onclick="showSection('home')">Home</button>
-            <button class="nav-btn" onclick="showSection('gallery')">Gallery</button>
-            <button class="nav-btn" onclick="showSection('products')">Products</button>
-            <button class="nav-btn" onclick="showSection('about')">About</button>
+            <button class="nav-btn" onclick="showSection('resolutions')">Resolutions</button>
+            <button class="nav-btn" onclick="showSection('subscription')">GF Subscription</button>
+            <button class="nav-btn" onclick="showSection('wordle')">Wordle</button>
+            <button class="nav-btn" onclick="showSection('hall-of-fame')">Hall of Fame</button>
         </div>
     </nav>
 
@@ -400,42 +615,194 @@
             </div>
         </section>
 
-        <!-- Products Section -->
-        <section id="products" class="products-container" style="display:none;">
-            <h2 class="section-title">All Products</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <h3 class="product-name">Caramel Popcorn</h3>
-                    <p class="product-price">¥15.00</p>
+        <!-- Resolutions Section -->
+        <section id="resolutions" class="section-container" style="display:none;">
+            <h2 class="section-title">2026 Resolutions</h2>
+            <ul class="resolutions-list">
+                <li class="resolution-item">
+                    <input type="checkbox" class="resolution-checkbox">
+                    <span class="resolution-text">Be more consistent with morning workouts</span>
+                </li>
+                <li class="resolution-item">
+                    <input type="checkbox" class="resolution-checkbox">
+                    <span class="resolution-text">Read at least 12 books this year</span>
+                </li>
+                <li class="resolution-item">
+                    <input type="checkbox" class="resolution-checkbox">
+                    <span class="resolution-text">Learn a new skill (guitar, coding, etc.)</span>
+                </li>
+                <li class="resolution-item">
+                    <input type="checkbox" class="resolution-checkbox">
+                    <span class="resolution-text">Save money for a special trip together</span>
+                </li>
+                <li class="resolution-item">
+                    <input type="checkbox" class="resolution-checkbox">
+                    <span class="resolution-text">Practice gratitude journaling daily</span>
+                </li>
+                <li class="resolution-item">
+                    <input type="checkbox" class="resolution-checkbox">
+                    <span class="resolution-text">Try one new recipe together each month</span>
+                </li>
+                <li class="resolution-item">
+                    <input type="checkbox" class="resolution-checkbox">
+                    <span class="resolution-text">Take more cute couple photos</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- GF Subscription Section -->
+        <section id="subscription" class="section-container" style="display:none;">
+            <h2 class="section-title">GF Subscription Form</h2>
+            <form class="subscription-form" id="subscriptionForm">
+                <div class="form-group">
+                    <div class="form-question">1. What's your favorite thing about your girlfriend?</div>
+                    <div class="form-options">
+                        <label class="form-option">
+                            <input type="radio" name="q1" value="her_smile">
+                            Her smile
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="q1" value="her_laugh">
+                            Her laugh
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="q1" value="everything">
+                            Everything about her
+                        </label>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <h3 class="product-name">Gummy Worms</h3>
-                    <p class="product-price">¥10.00</p>
+
+                <div class="form-group">
+                    <div class="form-question">2. How often do you think about your girlfriend?</div>
+                    <div class="form-options">
+                        <label class="form-option">
+                            <input type="radio" name="q2" value="always">
+                            All the time
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="q2" value="often">
+                            Very often
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="q2" value="constantly">
+                            Constantly
+                        </label>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <h3 class="product-name">Sour Candy Belts</h3>
-                    <p class="product-price">¥12.00</p>
+
+                <div class="form-group">
+                    <div class="form-question">3. What's your favorite couple activity?</div>
+                    <div class="form-options">
+                        <label class="form-option">
+                            <input type="radio" name="q3" value="dates">
+                            Going on dates
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="q3" value="movies">
+                            Watching movies together
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="q3" value="talks">
+                            Late night talks
+                        </label>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <h3 class="product-name">Cotton Candy</h3>
-                    <p class="product-price">¥5.00</p>
+
+                <div class="form-group">
+                    <div class="form-question">4. How many cute nicknames do you have for her?</div>
+                    <div class="form-options">
+                        <label class="form-option">
+                            <input type="radio" name="q4" value="many">
+                            Too many to count
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="q4" value="some">
+                            A good amount
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="q4" value="infinite">
+                            Infinite nicknames
+                        </label>
+                    </div>
                 </div>
+
+                <div class="form-group">
+                    <div class="form-question">5. What's the best part of your day?</div>
+                    <div class="form-options">
+                        <label class="form-option">
+                            <input type="radio" name="q5" value="talking">
+                            Talking to her
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="q5" value="seeing">
+                            Seeing her smile
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="q5" value="everything">
+                            Every moment with her
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Subscription Form</button>
+            </form>
+
+            <div class="certificate-container" id="certificateContainer">
+                <h3 class="section-title">Certificate of Completion</h3>
+                <img src="certificate.jpg" alt="GF Subscription Certificate" class="certificate-image" id="certificateImage">
+                <p style="margin-top: 20px; font-size: 1.2rem;">Congratulations! You've successfully subscribed to being the best boyfriend!</p>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="about-container" style="display:none;">
-            <h2 class="section-title">About</h2>
-            <p class="about-text">
-                This website is a special New Year tribute filled with sweet memories and treats. 
-                Each image in the gallery represents a precious moment from the past year, 
-                and each product symbolizes the sweetness of our journey together. 
-                Here's to creating more beautiful memories in the coming year!
-            </p>
-            <p class="about-text" style="margin-top: 20px;">
-                May this New Year bring you endless joy, laughter, and all the sweetness you deserve. 
-                Thank you for being the most wonderful part of my year!
-            </p>
+        <!-- Wordle Game Section -->
+        <section id="wordle" class="section-container" style="display:none;">
+            <h2 class="section-title">BOOBOO Wordle</h2>
+            <p class="wordle-instructions">Guess the 6-letter word. You have 6 attempts!</p>
+            
+            <div class="wordle-container">
+                <div class="wordle-grid" id="wordleGrid">
+                    <!-- Wordle grid will be generated by JavaScript -->
+                </div>
+                
+                <div class="keyboard" id="keyboard">
+                    <!-- Keyboard will be generated by JavaScript -->
+                </div>
+                
+                <div id="gameMessage" style="text-align: center; margin-top: 20px; font-size: 1.2rem;"></div>
+            </div>
+        </section>
+
+        <!-- Hall of Fame Section -->
+        <section id="hall-of-fame" class="section-container" style="display:none;">
+            <h2 class="section-title">Hall of Fame</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666; font-size: 1.1rem;">Scroll through our collection of special certificates</p>
+            
+            <div class="certificate-gallery">
+                <div class="certificate-item">
+                    <img src="certificate1.jpg" alt="Certificate 1" class="certificate-img">
+                    <div class="certificate-name">Best Boyfriend Award 2024</div>
+                </div>
+                <div class="certificate-item">
+                    <img src="certificate2.jpg" alt="Certificate 2" class="certificate-img">
+                    <div class="certificate-name">Cutest Couple Certificate</div>
+                </div>
+                <div class="certificate-item">
+                    <img src="certificate3.jpg" alt="Certificate 3" class="certificate-img">
+                    <div class="certificate-name">Most Romantic Partner</div>
+                </div>
+                <div class="certificate-item">
+                    <img src="certificate4.jpg" alt="Certificate 4" class="certificate-img">
+                    <div class="certificate-name">Guitar Master Certificate</div>
+                </div>
+                <div class="certificate-item">
+                    <img src="certificate5.jpg" alt="Certificate 5" class="certificate-img">
+                    <div class="certificate-name">Photobooth Champion</div>
+                </div>
+                <div class="certificate-item">
+                    <img src="certificate6.jpg" alt="Certificate 6" class="certificate-img">
+                    <div class="certificate-name">Sweetest Messages Award</div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -454,8 +821,7 @@
     </footer>
 
     <script>
-        // Image data with descriptions (replace with your actual image names and descriptions)
-        // You'll need to upload images named pic1.jpg, pic2.jpg, etc. to your GitHub repository
+        // Image data with descriptions
         const images = [
             { src: "pic1.jpg", description: "You tried so many photobooths with me even though they were all the same. You know just what i like." },
             { src: "pic2.jpg", description: "You took me to thr best birthday date i could have asked for. You told me so many things about the museums <3" },
@@ -470,23 +836,26 @@
             { src: "pic11.jpg", description: "All of our cute video calls are what keep me going, I love the cute random things I catch you doing each time.." }
         ];
         
+        // Wordle game variables
+        const WORDLE_WORD = "BOOBOO";
+        let currentRow = 0;
+        let currentCol = 0;
+        let gameOver = false;
+        
         // Function to initialize the carousel with images
         function initCarousel() {
             const carouselTrack = document.getElementById('carouselTrack');
             
             images.forEach((image, index) => {
-                // Create carousel item
                 const carouselItem = document.createElement('div');
                 carouselItem.className = 'carousel-item';
                 carouselItem.onclick = () => openModal(index);
                 
-                // Create image element
                 const img = document.createElement('img');
                 img.className = 'carousel-img';
                 img.src = image.src;
                 img.alt = `Memory ${index + 1}`;
                 
-                // For demonstration, using placeholder images if actual images don't exist
                 img.onerror = function() {
                     this.src = `https://picsum.photos/250/300?random=${index+1}`;
                 };
@@ -499,15 +868,19 @@
         // Function to handle navigation between sections
         function showSection(sectionId) {
             // Hide all sections
-            document.getElementById('home').style.display = 'none';
-            document.getElementById('gallery').style.display = 'none';
-            document.getElementById('products').style.display = 'none';
-            document.getElementById('about').style.display = 'none';
+            const sections = ['home', 'gallery', 'resolutions', 'subscription', 'wordle', 'hall-of-fame'];
+            sections.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) element.style.display = 'none';
+            });
             
             // Show the selected section
-            document.getElementById(sectionId).style.display = 'block';
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
             
-            // Special handling for home section which has different styling
+            // Special handling for home section
             if (sectionId === 'home') {
                 document.getElementById('home').style.display = 'block';
                 document.getElementById('gallery').style.display = 'block';
@@ -520,30 +893,20 @@
             const modalImage = document.getElementById('modalImage');
             const modalDescription = document.getElementById('modalDescription');
             
-            // Set modal content
             modalImage.src = images[imageIndex].src;
             modalImage.onerror = function() {
                 this.src = `https://picsum.photos/800/500?random=${imageIndex+1}`;
             };
             modalDescription.textContent = images[imageIndex].description;
             
-            // Show modal
             modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
+            document.body.style.overflow = 'hidden';
         }
         
         function closeModal() {
             const modal = document.getElementById('imageModal');
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
-        }
-        
-        // Close modal when clicking outside the image
-        window.onclick = function(event) {
-            const modal = document.getElementById('imageModal');
-            if (event.target === modal) {
-                closeModal();
-            }
+            document.body.style.overflow = 'auto';
         }
         
         // Carousel navigation
@@ -557,11 +920,188 @@
             carouselTrack.scrollBy({ left: 300, behavior: 'smooth' });
         });
         
+        // GF Subscription Form Handling
+        document.getElementById('subscriptionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Check if all questions are answered
+            const questions = ['q1', 'q2', 'q3', 'q4', 'q5'];
+            let allAnswered = true;
+            
+            questions.forEach(q => {
+                if (!document.querySelector(`input[name="${q}"]:checked`)) {
+                    allAnswered = false;
+                }
+            });
+            
+            if (allAnswered) {
+                // Show certificate
+                document.getElementById('certificateContainer').style.display = 'block';
+                document.getElementById('subscriptionForm').style.display = 'none';
+                
+                // Scroll to certificate
+                document.getElementById('certificateContainer').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                alert('Please answer all questions before submitting!');
+            }
+        });
+        
+        // Wordle Game Functions
+        function initWordle() {
+            const grid = document.getElementById('wordleGrid');
+            grid.innerHTML = '';
+            
+            for (let row = 0; row < 6; row++) {
+                const rowDiv = document.createElement('div');
+                rowDiv.className = 'wordle-row';
+                
+                for (let col = 0; col < 6; col++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'wordle-cell';
+                    cell.id = `cell-${row}-${col}`;
+                    rowDiv.appendChild(cell);
+                }
+                
+                grid.appendChild(rowDiv);
+            }
+            
+            initKeyboard();
+        }
+        
+        function initKeyboard() {
+            const keyboard = document.getElementById('keyboard');
+            keyboard.innerHTML = '';
+            
+            const rows = [
+                ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+                ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+                ['ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'BACKSPACE']
+            ];
+            
+            rows.forEach(rowLetters => {
+                const rowDiv = document.createElement('div');
+                rowDiv.className = 'keyboard-row';
+                
+                rowLetters.forEach(letter => {
+                    const key = document.createElement('button');
+                    key.className = 'key';
+                    if (letter === 'ENTER' || letter === 'BACKSPACE') {
+                        key.classList.add(letter.toLowerCase());
+                    }
+                    key.textContent = letter;
+                    key.addEventListener('click', () => handleKeyPress(letter));
+                    rowDiv.appendChild(key);
+                });
+                
+                keyboard.appendChild(rowDiv);
+            });
+            
+            // Reset game state
+            currentRow = 0;
+            currentCol = 0;
+            gameOver = false;
+            document.getElementById('gameMessage').textContent = '';
+        }
+        
+        function handleKeyPress(key) {
+            if (gameOver) return;
+            
+            if (key === 'BACKSPACE') {
+                if (currentCol > 0) {
+                    currentCol--;
+                    const cell = document.getElementById(`cell-${currentRow}-${currentCol}`);
+                    cell.textContent = '';
+                    cell.classList.remove('filled');
+                }
+            } else if (key === 'ENTER') {
+                if (currentCol === 6) {
+                    checkGuess();
+                }
+            } else if (key.length === 1 && /[A-Z]/.test(key)) {
+                if (currentCol < 6) {
+                    const cell = document.getElementById(`cell-${currentRow}-${currentCol}`);
+                    cell.textContent = key;
+                    cell.classList.add('filled');
+                    currentCol++;
+                }
+            }
+        }
+        
+        function checkGuess() {
+            let guess = '';
+            for (let col = 0; col < 6; col++) {
+                const cell = document.getElementById(`cell-${currentRow}-${col}`);
+                guess += cell.textContent;
+            }
+            
+            guess = guess.toUpperCase();
+            
+            // Check each letter
+            const wordArray = WORDLE_WORD.split('');
+            const guessArray = guess.split('');
+            
+            // First pass: mark correct letters
+            for (let i = 0; i < 6; i++) {
+                const cell = document.getElementById(`cell-${currentRow}-${i}`);
+                if (guessArray[i] === wordArray[i]) {
+                    cell.classList.add('correct');
+                    wordArray[i] = null; // Mark as used
+                }
+            }
+            
+            // Second pass: mark present letters
+            for (let i = 0; i < 6; i++) {
+                const cell = document.getElementById(`cell-${currentRow}-${i}`);
+                if (!cell.classList.contains('correct')) {
+                    const index = wordArray.indexOf(guessArray[i]);
+                    if (index !== -1) {
+                        cell.classList.add('present');
+                        wordArray[index] = null; // Mark as used
+                    } else {
+                        cell.classList.add('absent');
+                    }
+                }
+            }
+            
+            // Check if won
+            if (guess === WORDLE_WORD) {
+                gameOver = true;
+                document.getElementById('gameMessage').textContent = '🎉 Congratulations! You guessed BOOBOO! 🎉';
+                document.getElementById('gameMessage').style.color = '#5dbea3';
+            } else if (currentRow === 5) {
+                // Last row
+                gameOver = true;
+                document.getElementById('gameMessage').textContent = `Game Over! The word was: ${WORDLE_WORD}`;
+                document.getElementById('gameMessage').style.color = '#ff6b6b';
+            } else {
+                currentRow++;
+                currentCol = 0;
+            }
+        }
+        
+        // Keyboard event listener for physical keyboard
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('wordle').style.display !== 'none') {
+                const key = e.key.toUpperCase();
+                if (key === 'BACKSPACE' || key === 'ENTER' || /^[A-Z]$/.test(key)) {
+                    handleKeyPress(key);
+                }
+            }
+        });
+        
         // Initialize the website when the page loads
         document.addEventListener('DOMContentLoaded', function() {
             initCarousel();
-            // Show home and gallery by default
+            initWordle();
             showSection('home');
+            
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                const modal = document.getElementById('imageModal');
+                if (event.target === modal) {
+                    closeModal();
+                }
+            }
         });
     </script>
 </body>
